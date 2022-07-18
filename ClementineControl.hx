@@ -93,7 +93,7 @@ class ClementineControl extends IdeckiaAction {
 				resolve(true);
 			};
 			client.onError = (error:String) -> {
-				server.dialog.error(error);
+				server.dialog.error('Clementine-control error', error);
 			};
 		});
 	}
