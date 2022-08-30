@@ -9,9 +9,9 @@ Control the [Clementine player](https://www.clementine-player.org/) playback
 | Name | Type | Description | Shared | Default | Possible values |
 | ----- |----- | ----- | ----- | ----- | ----- |
 | action | String | Action | false | 'playpause' | [previous,play,next,playpause,shuffle,stop] |
-| clementineAuthCode | Int | AuthCode | true | -1 | null |
-| clementineHost | String | Host | true | "127.0.0.1" | null |
-| clementinePort | Int | Port | true | 5500 | null |
+| clementine_auth_code | Int | AuthCode | true | -1 | null |
+| clementine_host | String | Host | true | "127.0.0.1" | null |
+| clementine_port | Int | Port | true | 5500 | null |
 
 ## On single click
 
@@ -32,9 +32,9 @@ Does nothing
                 "name": "clementine-control",
                 "props": {
                     "action": "playpause",
-                    "clementineAuthCode": -1,
-                    "clementineHost": "127.0.0.1",
-                    "clementinePort": 5500
+                    "clementine_auth_code": -1,
+                    "clementine_host": "127.0.0.1",
+                    "clementine_port": 5500
                 }
             }
         ]
