@@ -8,13 +8,13 @@ using api.IdeckiaApi;
 typedef Props = {
 	@:shared
 	@:editable("Host", "127.0.0.1")
-	var clementineHost:String;
+	var clementine_host:String;
 	@:shared
 	@:editable("Port", 5500)
-	var clementinePort:Int;
+	var clementine_port:Int;
 	@:shared
 	@:editable("AuthCode", -1)
-	var clementineAuthCode:Int;
+	var clementine_auth_code:Int;
 	@:editable("Action", 'playpause', ['previous', 'play', 'next', 'playpause', 'shuffle', 'stop', 'songinfo'])
 	var action:String;
 }
@@ -86,8 +86,8 @@ class ClementineControl extends IdeckiaAction {
 
 	function connect():js.lib.Promise<Bool> {
 		return new js.lib.Promise((resolve, reject) -> {
-			server.log.debug('Connecting clementine in host [${props.clementineHost}] / port [${props.clementinePort}] / authCode[${props.clementineAuthCode}]');
-			client = new ClementineClient(props.clementineHost, props.clementinePort, props.clementineAuthCode);
+			server.log.debug('Connecting clementine in host [${props.clementine_host}] / port [${props.clementine_port}] / authCode[${props.clementine_auth_code}]');
+			client = new ClementineClient(props.clementine_host, props.clementine_port, props.clementine_auth_code);
 			client.onConnect = () -> {
 				server.log.info('Connected to clementine');
 				resolve(true);
